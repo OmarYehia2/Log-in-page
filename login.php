@@ -18,13 +18,19 @@
         if (mysqli_num_rows($result) > 0) {
             echo 'User already exists!';
         } else {
-            $insert = "INSERT INTO data (user, Email, pass, user_type) VALUES ('$name', '$email', '$hashed_pass', '$user_type')";
-            if (!mysqli_query($conn, $insert)) {
-                echo 'Database error: ' . mysqli_error($conn);
-            } else {
-                header('location:login.php');
-                exit();
+            try{
+                $insert = "INSERT INTO data (user, Email, pass, user_type) VALUES ('$name', '$email', '$hashed_pass', '$user_type')";
+                if (!mysqli_query($conn, $insert)) {
+                    echo 'Database error: ' . mysqli_error($conn);
+                } else {
+                    header('location:login.php');
+                    exit();
+                }
             }
+            catch(mysqli_sql_exception)
+            {
+                echo "<script>alert('Username Is Taken!');</script>";
+            };
         }
     }
     
