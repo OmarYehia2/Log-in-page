@@ -58,7 +58,7 @@
                 echo 'Incorrect email or password!';
             }
         } else {
-            echo 'Incorrect email or password!';
+            echo "Email Doesn't exists";
         }
     }
     
@@ -108,7 +108,7 @@
                     <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
-                <span>or use your email password</span>
+                <span>use your email password</span>
                 <input type="email" name="Email" placeholder="Email" required>
                 <input type="password" name="Password" placeholder="Password" required>
                 <a href="#">Forget Your Password?</a>
