@@ -2,8 +2,6 @@
     include('config.php');
     session_start();
 
-    $error = [];
-
     if (isset($_POST['okk'])) {
         $name = mysqli_real_escape_string($conn, $_POST['user']);
         $email = mysqli_real_escape_string($conn, $_POST['Email']);
